@@ -1,0 +1,50 @@
+<div class="form-group customFields">
+<input type="text" class="form-control" ng-model="search" ng-change="searchPosts(search, page, 10)" placeholder="Search posts...">
+<div class="myGif" ng-show="showSpinner">
+    <div class='uil-default-css' style='transform:scale(0.96);'>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(0deg) translate(0,-4px);transform:rotate(0deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(30deg) translate(0,-4px);transform:rotate(30deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(60deg) translate(0,-4px);transform:rotate(60deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(90deg) translate(0,-4px);transform:rotate(90deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(120deg) translate(0,-4px);transform:rotate(120deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(150deg) translate(0,-4px);transform:rotate(150deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(180deg) translate(0,-4px);transform:rotate(180deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(210deg) translate(0,-4px);transform:rotate(210deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(240deg) translate(0,-4px);transform:rotate(240deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(270deg) translate(0,-4px);transform:rotate(270deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(300deg) translate(0,-4px);transform:rotate(300deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+    <div style='top:98px;left:98px;width:4px;height:4px;background:#ff3d00;-webkit-transform:rotate(330deg) translate(0,-4px);transform:rotate(330deg) translate(0,-4px);border-radius:4px;position:absolute;'></div>
+</div>
+</div>
+</div>
+<br />
+<span ng-show="allPosts.length < 1"><small>No posts to display.</small></span>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in allPosts">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-xs-7" style="cursor:pointer;">
+                <h4>{{item.title}}</h4>
+            </div>
+            <div class="col-xs-5">
+                <blockquote class="mybq">
+                    <div class="row">
+                        <div class="col-xs-6 text-center">
+                            <span ng-hide="pageObj.ind === $index"><a href="" ng-click="editPost(item, $index)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></span>
+                            <span ng-show="pageObj.ind === $index"><a href="" ng-click="cancelEdit($index)"><i class="fa fa-ban" aria-hidden="true"></i> Cancel</a></span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span><a href="" ng-init="del = false;" ng-click="del = !del"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></span>
+                            <span><a href="" ng-show="del" ng-click="deletePost(item._id)" class="text-danger"> OK</a></span>
+                        </div>
+                    </div>
+                </blockquote>
+        </div>
+        </div>
+    </div>
+    <span class="clearfix"></span>
+</div>
+  </li>
+</ul>
+<posts-paginationadmin></posts-paginationadmin>

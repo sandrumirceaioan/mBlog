@@ -1,0 +1,41 @@
+<top-bar></top-bar>
+
+<header class="header-layout">
+	<div class="container">
+		<div class="row">
+		<div class="col-lg-4 col-md-4">
+			<img src="/assets/{{header.image}}" title="{{header.title}}" alt="{{header.title}}" class="logo">
+			<div class="header-info">
+				<h2 class="header-title">{{header.title}}</h2>
+				<span class="header-desc">{{header.description}}</span>
+			</div>
+		</div>
+		<div class="col-lg-8 col-md-8">
+
+		</div>
+	</div>
+	</div>
+
+</header>
+
+	<div class="nav">
+		<div class="container">
+			<div class="row">
+			  <ul>
+				<li ng-repeat="item in menu" class="home">
+					<a href="#{{item.url}}">{{item.title}}</a>
+				</li>
+			  </ul>
+		  </div>
+		</div>
+    </div>
+
+<div class="container container-posts">
+	<div ui-view autoscroll="false"></div>
+</div>
+
+<footer class="jumbotron text-center">
+	<div class="container myFooter">
+		Copyright @ Mean Blog | 2016<a ui-sref="admin.login" class="pull-right"> <i class="fa fa-sign-in" aria-hidden="true"></i> Admin</a>
+	</div>
+</footer>

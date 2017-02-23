@@ -1,0 +1,103 @@
+    <div class="row">
+
+        <!-- Blog Post Content Column -->
+        <div class="col-lg-9 col-md-9">
+
+            <!-- Blog Post -->
+
+            <!-- Title -->
+            <h1>{{post.title}}</h1>
+
+            <!-- Author -->
+            <p class="lead">
+                <small>by</small> <a class="themeColor">{{post.author}}</a>
+            </p>
+
+            <hr>
+
+            <!-- Date/Time -->
+            <p class="pull-left">Posted on {{post.postDate}}</p>
+            <span class="pull-right">{{comments.length}} <a href="" class="themeColor" ng-click="scrollTo('comm')">comment<span ng-show="comments.length > 1">s</span></a></span>
+            <span class="clearfix"></span>
+            <hr>
+
+            <!-- Post Content -->
+            <div ng-bind-html="post.fullDescription"></div>
+            <hr>
+            <blockquote>
+            Tags: <span ng-repeat="item in post.postTags"><span class="btn btn-default tag-btn">{{item.text}}</span></span>
+            </blockquote>
+            <hr>
+            <!-- Blog Comments -->
+
+            <!-- Comments Form -->
+            <div class="well" id="comm">
+                <h4>Leave a Comment:</h4>
+                <form name="form" role="form" ng-submit="sendComment(comment)">
+                    <div class="form-group" ng-class="{ 'has-error': form.alias.$dirty && form.alias.$error.required }">
+                        <input type="text" placeholder="Alias" name="alias" id="alias" class="form-control" ng-model="comment.alias" required/>
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+                        <input type="email" placeholder="Email" name="email" id="email" class="form-control" ng-model="comment.email" required/>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form.comment.$dirty && form.comment.$error.required }">
+                        <textarea class="form-control" placeholder="Your comment..." name="comment" id="comment" ng-model="comment.comment" required rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <hr>
+            <span>{{comments.length}} comments</span>
+            <hr>
+            <!-- Posted Comments -->
+
+            <!-- Comment -->
+            <div ng-hide="comments.length<1" class="media" ng-repeat="comment in comments">
+                <a class="pull-left" href="#">
+                    <img class="media-object" ng-src="{{getGravatar(comment.email)}}" alt="">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">{{comment.alias}}
+                        <small>{{comment.date}}</small>
+                    </h4>
+                    {{comment.comment}}
+                </div>
+            </div>
+
+            <!-- Comment -->
+            <!-- <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="http://placehold.it/64x64" alt="">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Start Bootstrap
+                        <small>August 25, 2014 at 9:30 PM</small>
+                    </h4>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="http://placehold.it/64x64" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Nested Start Bootstrap
+                                <small>August 25, 2014 at 9:30 PM</small>
+                            </h4>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </div>
+
+                </div>
+            </div> -->
+
+        </div>
+        <div class="col-lg-3 col-md-3">
+
+            <blog-sidebar></blog-sidebar>
+
+        </div>
+
+    </div>
+    <!-- /.row -->

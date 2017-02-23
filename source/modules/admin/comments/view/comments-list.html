@@ -1,0 +1,49 @@
+
+<div class="col-md-12">
+
+    <div class="row commentPreview">
+        <div class="col-md-4 imgAlias">
+            <img class="media-object" ng-src="{{getGravatar(comment.email,50)}}" alt="">
+            <h4>{{comment.alias}}</h4><br />
+            <small>{{comment.email}}</small>
+        </div>
+        <div class="col-md-6">
+            <blockquote class="commBlock">
+            <h5>{{comment.postTitle}}</h5>
+            <hr>
+            <h5><i>"{{comment.comment | limitTo: 100}}"</i>...</h5>
+            </blockquote>
+        </div>
+        <div class="col-md-2 actionBtns text-center">
+            <div class="row">
+                <blockquote class="mybq">
+                    <button class="btn myScc" ng-click="approveComment(comment._id, $index)" ng-class=" comment.approved ? 'scc' : ''" name="submit"><i class="fa fa-check-square-o" aria-hidden="true"></i></button><span class="clearfix"></span>
+                    <button class="btn myDel" ng-click="unapproveComment(comment._id, $index)" ng-class=" comment.unapproved ? 'unpp' : ''" name="submit"><i class="fa fa-trash-o" aria-hidden="true"></i></button><span class="clearfix"></span>
+                    <button class="btn edd" name="submit" ng-init="showComm = false;" ng-click="showComm = !showComm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    <div class="clearfix"></div>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="formContainer" ng-show="showComm">
+        <form name="form[$index]" ng-submit="updateComment(comment, $index)">
+            <div class="form-group customFields" ng-class="{ 'has-error': form.alias.$dirty && form.alias.$error.required }">
+                <!-- <label for="usr">Url</label> -->
+                <input type="text" name="alias" class="form-control" ng-model="comment.alias" placeholder="Alias..." required>
+            </div>
+            <div class="form-group customFields" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+                <!-- <label for="usr">Url</label> -->
+                <input type="email" name="email" class="form-control" ng-model="comment.email" placeholder="Email..." required>
+            </div>
+            <div class="form-group customFields" ng-class="{ 'has-error': form.comment.$dirty && form.comment.$error.required }">
+                <textarea class="form-control" name="comment" rows="10" ng-model="comment.comment" placeholder="Comment..." required></textarea>
+            </div>
+            <div class="form-group customFields">
+                <button type="submit" class="btn btn-success" name="submit" ng-disabled="form.$invalid">Update Comment</button>
+            </div>
+        </form>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<span class="clearfix"></span>
