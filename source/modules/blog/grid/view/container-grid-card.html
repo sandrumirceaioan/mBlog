@@ -1,0 +1,6 @@
+				<a ui-sref="main.post({postUrl: url})" class=""><h4 class="card-title myCardTitle">{{title}}</h4></a>
+				<img ng-show="img.length > 1" class="card-img-top" src="{{img}}" alt="{{title}}">
+				<img ng-show="img.length < 1" class="card-img-top" src="/assets/default-thumb.jpg" alt="{{title}}">
+				<div class="card-block">
+					<p class="card-text myShortDesc">{{desc | limitTo: 75}}...</p>
+				</div>

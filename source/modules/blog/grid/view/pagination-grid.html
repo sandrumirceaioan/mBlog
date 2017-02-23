@@ -1,0 +1,6 @@
+<ul class="pagination">
+  <li ng-repeat="i in navButtons track by $index" ng-class="{'active activec': currentPage == $index+1}">
+        <span ng-hide="{{$index === 0}}"><a ui-sref="main.page({pnr: $index+1})">{{$index+1}}</a></span>
+        <span ng-show="{{$index === 0}}"><a ui-sref="main.container">{{$index+1}}</a></span>
+    </li>
+</ul>

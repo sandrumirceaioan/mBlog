@@ -1,0 +1,65 @@
+<div class="row inner contact">
+    <div class="col-md-12">
+        <h4>Users</h4>
+        <br />
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="user in ctrl.newUsers track by $index">
+            <div class="col-xs-2">
+                <span ng-hide="ctrl.pageObj.ind === $index">{{user.username}}</span>
+                <div class="customFields customFields-smaller-padding" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                    <input ng-show="ctrl.pageObj.ind === $index" type="text" name="username" class="form-control" ng-model="ctrl.user.username" placeholder="Username" required autofocus>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <span ng-hide="ctrl.pageObj.ind === $index">{{user.email}}</span>
+                <div class="customFields customFields-smaller-padding" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+                    <input ng-show="ctrl.pageObj.ind === $index" type="text" name="email" class="form-control" ng-model="ctrl.user.email" placeholder="Username" required autofocus>
+                </div>
+            </div>
+            <div class="col-xs-1 text-center">
+                <span ng-hide="ctrl.pageObj.ind === $index">
+                    <i ng-show="user.rank == 1">Admin</i>
+                    <i ng-show="user.rank == 2">Author</i>
+                    <i ng-show="user.rank == 3">Editor</i>
+                    <i ng-show="user.rank == 4">not set</i>
+                </span>
+                    <div class="customFields customFields-smaller-padding" ng-class="{ 'has-error': form.rank.$dirty && form.rank.$error.required }">
+                        <select ng-show="ctrl.pageObj.ind === $index" class="form-control" name="rank" ng-model="ctrl.user.rank" required>
+                                <option value="4" ng-selected="ctrl.user.rank == 4">Select Rank</option>
+                                <option value="1" ng-selected="ctrl.user.rank == 1">Admin</option>
+                                <option value="2" ng-selected="ctrl.user.rank == 2">Author</option>
+                                <option value="3" ng-selected="ctrl.user.rank == 3">Editor</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="col-xs-2 text-center">
+                <span ng-if="user.approved === true">Approved</span>
+                <span ng-if="user.approved === false">Unapproved</span>
+            </div>
+            <div class="col-xs-4">
+                <blockquote class="mybq">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                        <div ng-hide="ctrl.pageObj.ind === $index"><a href="" ng-click="ctrl.editCategory(user, $index)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></div>
+                        <div ng-show="ctrl.pageObj.ind === $index">
+                            <a href="" ng-click="ctrl.cancelEdit($index)"><i class="fa fa-ban" aria-hidden="true"></i> Cancel</a>
+                            <a href="" ng-click="ctrl.updateUser(ctrl.user._id); noyes = false" class="delete-answers text-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</a>
+                        </div>
+                    </div>
+                        <div class="col-md-6 text-center">
+                            <div ng-show="noyes">
+                                <a href="" ng-click="noyes = false"><i class="fa fa-ban" aria-hidden="true"></i> Cancel</a>
+                                <a href="" ng-click="ctrl.deleteCategory(ctrl.user._id); noyes = false" class="delete-answers text-success"><i class="fa fa-check-square-o" aria-hidden="true"></i> Yes</a>
+                            </div>
+                            <div ng-show="!noyes"><a href="" ng-click="noyes = !noyes"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></div>
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+            <span class="clearfix"></span>
+
+          </li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+</div><!-- End Inner -->

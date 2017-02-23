@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-lg-3 col-md-3">
+
+		<blog-sidebar></blog-sidebar>
+
+	</div>
+	<div class="col-lg-9 col-md-9">
+		<div class="row">
+
+		<div class="card col-lg-4 col-md-4 col-sm-4 post-card" ng-repeat="post in posts">
+
+			<post-card title="post.title" desc="post.desc"></post-card>
+
+		</div>
+
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+
+				<posts-pagination></posts-pagination>
+
+			</div>
+		</div>
+	</div>
+</div>

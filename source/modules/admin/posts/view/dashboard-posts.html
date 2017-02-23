@@ -1,0 +1,71 @@
+<div class="row inner contact">
+    <div class="col-md-6">
+    <h4>{{pageObj.formTitle}}</h4>
+    <br />
+        <div class="contact-form">
+            <div class="row">
+
+                <form name="form">
+
+                    <div class="col-xs-6">
+                        <div class="form-group customFields" ng-class="{ 'has-error': form.title.$dirty && form.title.$error.required }">
+                            <input type="text" name="title" class="form-control" ng-change="createUrl(post.title)" ng-trim="false" ng-model="post.title" placeholder="Post Title" required autofocus>
+                        </div>
+                        <div class="form-group customFields" ng-class="{ 'has-error': form.url.$dirty && form.url.$error.required }">
+                            <input type="text" name="url" class="form-control" ng-model="post.url" placeholder="Post URL" required autofocus>
+                        </div>
+                        <div class="form-group customFields" ng-class="{ 'has-error': form.category.$dirty && form.category.$error.required }">
+                            <select class="form-control" name="category" ng-model="post.category" required>
+                                    <option value="">Select Category</option>
+                                    <option ng-repeat="category in categories | orderBy: 'title'" value="{{category._id}}">{{category.title}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="form-group customFields" ng-class="{ 'has-error': form.shortDescription.$dirty && form.shortDescription.$error.required }">
+                            <textarea class="form-control" name="shortDescription" rows="7" ng-model="post.shortDescription" placeholder="Short Description" required autofocus></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                            <tags-input name="keywords" ng-model="post.keywords" ng-class="{ 'has-error': form.keywords.$dirty && form.keywords.$error.required || form.keywords.length < 1}"></tags-input>
+                            <input type="hidden" ng-model="post.keywords" name="keywords" required>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <text-angular ng-model="post.fullDescription"></text-angular>
+                        <br />
+                    </div>
+                    <div class="col-xs-8 form-group customFields">
+                        <button ng-hide="pageObj.ind || pageObj.ind===0" type="submit" class="btn btn-success" name="submit" ng-click="savePost(post)" ng-disabled="form.$invalid">
+                            <span ng-show="!post.draftStatus">Publish Post</span>
+                            <span ng-show="post.draftStatus">Save Draft</span>
+                        </button>
+                        <button ng-show="pageObj.ind || pageObj.ind===0" type="submit" class="btn btn-success" name="submit" ng-click="updatePost(post,pageObj.ind)" ng-disabled="form.$invalid">Update Post</button>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="checkbox">
+                            <label><input type="checkbox" ng-model="post.indexStatus">NOINDEX</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="checkbox">
+                            <label><input type="checkbox" ng-model="post.draftStatus">DRAFT</label>
+                        </div>
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                </form>
+
+            </div>
+        </div><!-- End Contact Form Area -->
+        <div class="clearfix"></div>
+    </div>
+    <div class="col-md-6">
+    <h4>Posts</h4>
+    <br />
+    <posts-list></posts-list>
+    </div>
+</div><!-- End Inner -->

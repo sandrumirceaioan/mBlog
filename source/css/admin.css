@@ -1,0 +1,506 @@
+.admin-main {
+    position: absolute;
+    /*background: url('/assets/adminbg.jpg') no-repeat center center;*/
+    background: #3e3e3e;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.bbutton {
+    border-radius:0px;
+}
+
+.form-signin
+{
+    width: 100%;
+    padding: 0 20px 0 5px;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: 15px;
+    border-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 15px;
+    border-radius: 0;
+}
+
+
+.register-link, .register-link:hover {
+    color: #fff;
+    float: right;
+    font-size:12px;
+    display:block;
+    margin-top:5px;
+}
+
+
+.account-wall
+{
+    margin-top: 45%;
+    padding: 35px 0px 35px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 100%;
+        padding-left: 20px;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+
+.form-register input {
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    margin-bottom:15px;
+    border-radius:0px;
+}
+
+.header-breadcrumb {
+    padding: 17px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #484848;
+    border-radius:0px;
+}
+
+.header-breadcrumb span, .header-breadcrumb a:hover{color:#ff3737;}
+.header-breadcrumb a{color:#d8d8d8;}
+
+
+/* categories */
+
+.customFields {
+    position: relative;
+}
+
+.customFields input {
+    border-radius: 0;
+    padding: 25px 10px;
+    border: 1px solid #bebebe;
+    outline: none;
+}
+.customFields-smaller-padding input {
+    padding: 15px 10px !important;
+}
+
+.customFields-smaller-padding select {
+    padding: 5px 10px !important;
+    height: 34px !important;
+}
+
+.customFields input:focus, .customFields textarea:focus {
+    outline:none !important;
+    box-shadow:none !important;
+}
+
+.customFields textarea, .customFields select {
+    border-radius: 0;
+    padding: 15px 10px;
+    border: 1px solid #bebebe;
+    outline: none;
+}
+
+.customFields textarea {
+    border-radius: 0;
+    padding: 15px 10px;
+    border: 1px solid #bebebe;
+    outline: none;
+    min-height: 185px;
+}
+
+.customFields select {
+    border-radius: 0;
+    padding: 15px 10px;
+    border: 1px solid #bebebe;
+    outline: none;
+    height: 52px;
+}
+
+tags-input {margin-bottom:15px;}
+
+tags-input .tags {
+    border-radius: 0;
+    padding: 10px 10px;
+    border: 1px solid #bebebe;
+    outline: 0;
+}
+
+tags-input .host {
+    outline:none;
+}
+
+tags-input .tags:hover, .customFields tags-input:focus, .customFields tags-input:active {
+    border: 1px solid #484848;
+    transition: all 0.8s;
+}
+
+
+.customFields input:focus, .customFields input:hover, .customFields textarea:focus, .customFields textarea:hover, .customFields select:focus, .customFields select:hover {
+    border: 1px solid #484848;
+    transition: all 0.8s;
+}
+
+.customFields button {
+    width:100%;
+    border-radius:0px;
+}
+
+.form-control > .has-error {
+    border:3px solid #a94442 !important;
+}
+
+.has-errors {
+    border-color:#0000ff;
+}
+
+.has-error .form-control {
+    border-color: #f00;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.delete-answers {
+    padding:0 5px;
+}
+
+.ta-scroll-window.form-control {
+    margin-top:15px;
+    border-radius:0px;
+    outline: none;
+}
+
+.ta-scroll-window.form-control:focus,.ta-scroll-window.form-control:hover {
+    border: 1px solid #484848;
+    transition: all 0.8s;
+}
+
+tags-input .tags .input {
+    border:none;
+}
+
+.noindex {padding:10px;}
+
+.my-checkbox {margin:0px;}
+
+/*end categories*/
+
+
+/* spinner */
+
+@-webkit-keyframes uil-default-anim {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+@keyframes uil-default-anim {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+.uil-default-css > div:nth-of-type(1) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(2) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.4166666666666667s;
+    animation-delay: -0.4166666666666667s;
+}
+.uil-default-css > div:nth-of-type(3) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.33333333333333337s;
+    animation-delay: -0.33333333333333337s;
+}
+.uil-default-css {
+    background: none;
+}
+.uil-default-css > div:nth-of-type(4) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.25s;
+    animation-delay: -0.25s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(5) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.16666666666666669s;
+    animation-delay: -0.16666666666666669s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(6) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.08333333333333331s;
+    animation-delay: -0.08333333333333331s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(7) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(8) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.08333333333333337s;
+    animation-delay: 0.08333333333333337s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(9) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.16666666666666663s;
+    animation-delay: 0.16666666666666663s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(10) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.25s;
+    animation-delay: 0.25s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(11) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.33333333333333337s;
+    animation-delay: 0.33333333333333337s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+.uil-default-css > div:nth-of-type(12) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.41666666666666663s;
+    animation-delay: 0.41666666666666663s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+}
+
+.myGif {
+    position: absolute;
+        top: -25px;
+        right: 110px;
+        /* z-index: 9999; */
+        width: 10px;
+        height: 10px;
+}
+
+/* spinner */
+
+
+.mybq {
+    border-left: 5px solid #ff3737;
+    background: #f1f1f1;
+    font-size: 13px;
+    margin: 0px;
+}
+
+.mybq a {
+    color: #444;
+    text-decoration: underline;
+}
+
+.padetails {
+    background: #f3f3f3;
+        font-size: 12px;
+        margin-top: 10px;
+        padding: 15px;
+        color: #333;
+        border-left: 5px solid #ff3737;
+}
+
+.commentPreview small {
+    word-break: break-all;
+}
+
+.commentPreview h4{
+    display: block;
+    padding: 10px 10px;
+    margin-left: 60px;
+    word-break: break-all;
+}
+
+.commentPreview img {
+    float: left;
+    width: 62px;
+    border-radius: 50px;
+}
+
+.commentPreview .commBlock {
+    padding: 5px 20px 5px 20px;
+        margin: 10px 0 10px 0;
+        font-size: 17.5px;
+        border-left: 5px solid #eee;
+}
+
+.imgAlias {
+    margin-top:10px;
+}
+
+.actionBtns button {
+        background:#f1f1f1;
+        font-size: 20px;
+        padding: 2px 7px;
+        margin: 5px 0px 5px 0px;
+        border:none;
+        outline: none;
+}
+
+.myDel {
+    font-size: 25px !important;
+    padding: 0 7px !important;
+}
+.scc {
+    color:#73c10c !important;
+}
+
+.una {
+    color:#ffbe00 !important;
+}
+.una:hover {
+    color:#73c10c;
+}
+
+.unpp {
+    color:#ff3100 !important;
+
+}
+
+
+.actionBtns .myScc.active,.actionBtns .myScc:active, .actionBtns .myScc:hover, .actionBtns .myScc:focus {
+    color:#73c10c !important;
+    border:none;
+    outline: none;
+}
+
+.actionBtns .myDel.active,.actionBtns .myDel:active, .actionBtns .myDel:hover, .actionBtns .myDel:focus {
+    color:#ff3100 !important;
+    border:none;
+    outline: none;
+}
+
+.formContainer {
+    margin-top:10px;
+}
+
+.menu-bars {
+    display: block;
+    float: right;
+    font-size: 25px;
+    padding: 10px;
+    color: #585858;
+}
+
+.hideMenu {display:none;}
+.make-half {width:50%;    float: left;}
+
+.collapsed-menu {
+    float: right;
+    padding: 8px 10px 9px 10px;
+    box-sizing: border-box;}
+
+    .icn-color {color: #ff3737;}
+
+    .trans-all {
+        transition: all 0.5s
+    }
+
+    .sidebar-nav li a:hover .icn-color {
+        color:#ffffff !important;
+    }
+
+    .active-menu {
+        background: #212121 !important;
+        color: #fff !important;
+    }
+
+    .active-menu .icn-color {
+        color:#ffffff !important;
+    }

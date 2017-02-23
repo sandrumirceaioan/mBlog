@@ -1,0 +1,32 @@
+<div class="adminCover">
+		<div id="sidebar-wrapper" ng-class="collapse === true ? 'col-lg-12 col-md-12 col-sm-12' : 'col-lg-2 col-md-2 col-sm-2'">
+                <div class="adminHeader">
+                    <a href="#/" class="viewBlog">
+        				<img src="/assets/{{header.image}}" class="admLoggedLogo">
+        				<span>{{header.title}}</span>
+			        </a>
+                    <a class="menu-bars" class="trans-all" href="" ng-hide="collapse" ng-click="collapse = !collapse">
+                        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                    </a>
+                    <a class="menu-bars" class="trans-all" href="" ng-show="collapse" ng-click="collapse = !collapse">
+                        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+                    </a>
+                    <div class="clearfix"></div>
+			</div>
+            <ul class="sidebar-nav" ng-class="collapse === true ? 'hideMenu' : ''">
+                <admin-sidebar obj="sidebarItems" cstate="currentState"></admin-sidebar>
+				<li><a href="" ng-click="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper" ng-class="collapse === true ? 'col-lg-12 col-md-12 col-sm-12' : 'col-lg-10 col-md-10 col-sm-10'">
+			<div class="header-breadcrumb" ncy-breadcrumb ng-class="collapse === true ? 'col-lg-2 col-md-2 col-sm-2' : ''"></div>
+            <div class="collapsed-menu" ng-show="collapse" ng-class="collapse === true ? 'col-lg-10 col-md-10 col-sm-10 header-breadcrumb' : ''">
+                <div ng-repeat="item in sidebarItems | reverse" ng-show="collapse" class="collapsed-menu">
+                    <a ui-sref="{{item.itemUrl}}"> <span ng-bind-html="item.itemIcon"></span> {{item.itemTitle}}</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+                <div ui-view autoscroll="false"></div>
+
+        </div>
+</div>
